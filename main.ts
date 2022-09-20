@@ -482,5 +482,13 @@ if (game.ask("Drink the iced tea", "Walk 10 miles")) {
     game.showLongText("The dinosaur says:\"Give me something!\"", DialogLayout.Bottom)
     if (game.ask("Give the dinosaur $2", "Give the dinosaur iced tea")) {
         gameOver("The dinosaur eats you")
+    } else {
+        game.showLongText("The dinosaur likes iced tea，so he wants to help you make a wish come true", DialogLayout.Bottom)
+        if (game.ask("Let it help you find your way to the city", "3 more wishes")) {
+            game.showLongText("The dinosaur takes you back to the city", DialogLayout.Bottom)
+            game.over(true)
+        } else {
+            gameOver("The dinosaur thinks you are too greedy and eats you")
+        }
     }
 }
